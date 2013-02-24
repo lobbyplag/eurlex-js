@@ -358,12 +358,12 @@ var _parse = function(_data, callback) {
 			/* next */
 			continue;
 		}
-		
+
 		// thats it with the easy part. now wish me luck.
 
 		/* match for paragraph */
-		if (item.match(/^([0-9]+)\. /)) {
-			_item = item.match(/^([0-9]+)\. (.*)$/);
+		if (item.match(/^([0-9]+)(\.)? /)) {
+			_item = item.match(/^([0-9]+)(\.)? (.*)$/);
 			if (!_item) throw new Error('Parser stopped on Paragraph: '+item);
 			paragraph_number++;
 			point_number = 0;
@@ -373,7 +373,7 @@ var _parse = function(_data, callback) {
 				"id": "a"+article_number.toString()+"p"+paragraph_number.toString(),
 				"type": "paragraph",
 				"literal": _item[1],
-				"text": _item[2]
+				"text": _item[3]
 			});
 			if (argv.v && !argv.q) console.error(('P'+paragraph_number).pad().inverse.bold.cyan, _item[2]);
 			/* next */
