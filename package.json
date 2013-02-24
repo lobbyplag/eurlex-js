@@ -1,5 +1,4 @@
 {
-	"private": true,
 	"name": "eurlex",
 	"version": "0.1.0",
 	"description": "Retrieve documents from EUR-Lex and convert them to usable data",
