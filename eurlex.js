@@ -36,8 +36,8 @@ var argv = optimist
 	.describe('r','make json readable')
 	.alias('q','quiet')
 	.describe('q','no output whatsoever, except the data of course')
-	.alias('d','debug')
-	.describe('d','debugging output for mismatches in unifications')
+	.alias('b','debug')
+	.describe('b','debugging output for mismatches in unifications')
 	.usage('$0'.magenta+' '+'[options]'.red+' '+'<EUR-Lex URI>'.green)
 	.argv;
 		
