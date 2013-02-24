@@ -24,7 +24,7 @@
 	"bugs": {
 		"url": "http://github.com/yetzt/eurlex-js/issues",
 		"email": "eurlex-js@lobbyplag.eu"
-	}
+	},
 	"keywords": ["cli","eurlex","scraper","eu","european union","open data","lobbyplag"],
 	"dependencies": {
 		"colors": ">= 0.6",
