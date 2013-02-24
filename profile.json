@@ -1,5 +1,5 @@
 {
-	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv","lt","hu","mt","nl"],
+	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv","lt","hu","mt","nl","pl"],
 	"expressions": {
 		"lang": "<meta name=\"DC.language\" content=\"([^\"]+)\">",
 		"title": "<meta name=\"DC.description\" content=\"([^\"]+) \\/\\* [^\\*]+ \\*\\/\">"
@@ -175,6 +175,16 @@
 			"chapter": "^HOOFDSTUK ",
 			"section": "^AFDELING ",
 			"article": "^Artikel ",
+			"fixes": [
+				["^2 ","2. "]
+			]
+		},
+		"pl": {
+			"recitals": ["a także mając na uwadze, co następuje:","PRZYJMUJĄ NINIEJSZE ROZPORZĄDZENIE:"],
+			"articles": ["PRZYJMUJĄ NINIEJSZE ROZPORZĄDZENIE:","^Sporządzono w (Brukseli|[^<]+), dnia [0-9]+\\.[0-9]+\\.[0-9]{4} r\\."],
+			"chapter": "^ROZDZIAŁ ",
+			"section": "^SEKCJA ",
+			"article": "^Artykuł ",
 			"fixes": [
 				["^2 ","2. "]
 			]
