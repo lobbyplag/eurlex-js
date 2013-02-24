@@ -284,11 +284,11 @@ var _parse = function(_data, callback) {
 		});
 		
 		/* match for chapter */
-		if (item.match(new RegExp(_delim.chapter))) {
+		if ((typeof _delim.chapter !== 'object') ? item.match(new RegExp(_delim.chapter)) : item.match(new RegExp(_delim.chapter[0]))) {
 			/* check if the chapter is broken */
-			if (item.match(new RegExp(_delim.chapter+'([XIV]+)$'))) item = [item, _data.articles.shift()].join(' ');
+			if ((typeof _delim.chapter !== 'object') ? item.match(new RegExp(_delim.chapter+'([XIV]+)$')) : item.match(new RegExp(_delim.chapter[1]))) item = [item, _data.articles.shift()].join(' ');
 			/* get text */
-			_item = item.match(new RegExp(_delim.chapter+'([XIV]+) (.*)$'));
+			_item = (typeof _delim.chapter !== 'object') ? item.match(new RegExp(_delim.chapter+'([XIV]+) (.*)$')) : item.match(new RegExp(_delim.chapter[2]));
 			if (!_item) throw new Error('Parser stopped on Chapter: '+item);
 			/* reset counters */
 			chapter_number++;
@@ -310,11 +310,11 @@ var _parse = function(_data, callback) {
 		}
 		
 		/* match for section */
-		if (item.match(new RegExp(_delim.section, 'i'))) {
+		if ((typeof _delim.section !== 'object') ? item.match(new RegExp(_delim.section,'i')) : item.match(new RegExp(_delim.section[0],'i'))) {
 			/* check if the section is broken */
-			if (item.match(new RegExp(_delim.section+'([0-9]+)$', 'i'))) item = [item, _data.articles.shift()].join(' ');
+			if ((typeof _delim.section !== 'object') ? item.match(new RegExp(_delim.section+'([0-9]+)$', 'i')) : item.match(new RegExp(_delim.section[1],'i'))) item = [item, _data.articles.shift()].join(' ');
 			/* get text */
-			_item = item.match(new RegExp(_delim.section+'([0-9]+) (.*)$', 'i'));
+			_item = (typeof _delim.section !== 'object') ? item.match(new RegExp(_delim.section+'([0-9]+) (.*)$', 'i')) : item.match(new RegExp(_delim.section[2],'i'));
 			if (!_item) throw new Error('Parser stopped on Section: '+item);
 			/* reset counters */
 			section_number++;
