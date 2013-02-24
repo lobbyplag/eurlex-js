@@ -451,7 +451,7 @@ var _unify = function(data, callback) {
 
 		/* check for matching lengths */
 		for (var lang in data) {
-			if (_length !== null && _length !== data[lang].length) throw new Error('Language versions don\'t match in lenght.')
+			if (_length !== null && _length !== data[lang].length) throw new Error('Language versions don\'t match in length: '+_length+' <> '+data[lang].length)
 			_length = data[lang].length;
 			_default = lang;
 		}
