@@ -1,5 +1,5 @@
 {
-	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da"],
+	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el"],
 	"expressions": {
 		"lang": "<meta name=\"DC.language\" content=\"([^\"]+)\">",
 		"title": "<meta name=\"DC.description\" content=\"([^\"]+) \\/\\* [^\\*]+ \\*\\/\">"
@@ -101,6 +101,24 @@
 			"fixes": [
 				["^2 ","2. "]
 			]
+		},
+		"et": {
+			"recitals": ["ning arvestades järgmist:","ON VASTU VÕTNUD KÄESOLEVA MÄÄRUSE:"],
+			"articles": ["ON VASTU VÕTNUD KÄESOLEVA MÄÄRUSE:","^(Brüssel|[^<]+), [0-9]+\\.[0-9]+\\.[0-9]{4}$"],
+			"chapter": ["^([XVI]+) PEATÜKK", "^([XVI]+) PEATÜKK$", "^([XVI]+) PEATÜKK (.*)$"],
+			"section": ["^([0-9]+)\\. JAGU", "^([0-9]+)\\. JAGU$", "^([0-9]+)\\. JAGU (.*)$"],
+			"article": "^Artikkel ",
+			"fixes": [
+				["^2 ","2. "]
+			]
+		},
+		"el": {
+			"recitals": ["Εκτιμώντας τα ακόλουθα:","ΕΞΕΔΩΣΑΝ ΤΟΝ ΠΑΡΟΝΤΑ ΚΑΝΟΝΙΣΜΟ:"],
+			"articles": ["ΕΞΕΔΩΣΑΝ ΤΟΝ ΠΑΡΟΝΤΑ ΚΑΝΟΝΙΣΜΟ:","^(Βρυξέλλες|[^<]+), [0-9]+\\.[0-9]+\\.[0-9]{4}$"],
+			"chapter": "^ΚΕΦΑΛΑΙΟ ",
+			"section": "^ΤΜΗΜΑ ",
+			"article": "^Άρθρο ",
+			"fixes": []
 		}
 	}
 }
