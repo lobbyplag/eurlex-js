@@ -377,7 +377,7 @@ var _parse = function(_data, callback) {
 				"literal": _item[1],
 				"text": _item[3]
 			});
-			if (argv.v && !argv.q) console.error(('P'+paragraph_number).pad().inverse.bold.cyan, _item[2]);
+			if (argv.v && !argv.q) console.error(('P'+paragraph_number).pad().inverse.bold.cyan, _item[3]);
 			/* next */
 			continue;
 		}
@@ -453,7 +453,7 @@ var _unify = function(data, callback) {
 
 		/* check for matching lengths */
 		for (var lang in data) {
-			if (!argv.d && _length !== null && _length !== data[lang].length) throw new Error('Language versions don\'t match in length: '+_length+' <> '+data[lang].length)
+			if (!argv.b && _length !== null && _length !== data[lang].length) throw new Error('Language versions don\'t match in length: '+_length+' <> '+data[lang].length)
 			_length = data[lang].length;
 			_default = lang;
 		}
@@ -468,7 +468,7 @@ var _unify = function(data, callback) {
 				"text": {}
 			}
 			for (var lang in data) {
-				if (argv.d && data[_default][i].id !== data[lang][i].id) {
+				if (argv.b && data[_default][i].id !== data[lang][i].id) {
 					console.log(data[_default][i].id.yellow)
 					console.log(data[lang][i].id.blue)
 					console.log(data[_default][i].text.yellow)
