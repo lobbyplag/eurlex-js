@@ -1,0 +1,34 @@
+{
+	"private": true,
+	"name": "eurlex.js",
+	"version": "0.1.0",
+	"description": "Retrieve documents from EUR-Lex and convert them to usable data",
+	"licenses": [{
+		"name": "EUPL",
+		"url": "http://joinup.ec.europa.eu/software/page/eupl/licence-eupl"
+	}],
+	"author": "Sebastian Vollnhals <sebastian@vollnhals.info>",
+	"maintainers": [{
+		"name": "Sebastian Vollnhals",
+		"email": "sebastian@vollnhals.info",
+		"web": "http://vollnhals.info/"
+	}],
+	"homepage": "http://www.lobbyplag.eu/"
+	"bin": {
+		"eurlex": "./eurlex.js"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/yetzt/eurlex-js.git"
+	},
+	"keywords": ["cli","eurlex","scraper"],
+	"dependencies": {
+		"colors": ">= 0.6.",
+		"optimist": ">= 0.3",
+		"request": ">= 2.14",
+		"vargs": ">= 0.1"
+	},
+	"engines": {
+		"node": ">= 0.8.15"
+	}
+}
