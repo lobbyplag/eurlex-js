@@ -332,7 +332,7 @@ var _parse = function(_data, callback) {
 			/* check if the article is broken */
 			if (item.match(new RegExp(_delim.article+'([0-9]+)$'))) item = [item, _data.articles.shift()].join(' ');
 			/* get text */
-			_item = item.match(new RegExp(_delim.article+'([0-9]+) (.*)$'));
+			_item = item.match(new RegExp(_delim.article+'([0-9]+)(\.[º°])? (.*)$'));
 			if (!_item) throw new Error('Parser stopped on Article: '+item);
 			/* reset counters */
 			article_number++;
@@ -345,9 +345,9 @@ var _parse = function(_data, callback) {
 				"id": "a"+article_number.toString(),
 				"type": "article",
 				"literal": _item[1],
-				"text": _item[2]
+				"text": _item[3]
 			});
-			if (argv.v && !argv.q) console.error(('A'+article_number).pad().inverse.bold.blue, _item[2]);
+			if (argv.v && !argv.q) console.error(('A'+article_number).pad().inverse.bold.blue, _item[3]);
 			/* next */
 			continue;
 		}
