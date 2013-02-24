@@ -1,5 +1,5 @@
 {
-	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv"],
+	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv","lt"],
 	"expressions": {
 		"lang": "<meta name=\"DC.language\" content=\"([^\"]+)\">",
 		"title": "<meta name=\"DC.description\" content=\"([^\"]+) \\/\\* [^\\*]+ \\*\\/\">"
@@ -127,6 +127,16 @@
 			"section": ["^([0-9]+)\\. IEDAĻA", "^([0-9]+)\\. IEDAĻA$", "^([0-9]+)\\. IEDAĻA (.*)$"],
 			"article": ["^([0-9]+)\\. pants", "^([0-9]+)\\. pants$", "^([0-9]+)\\. pants (.*)$"],
 			"fixes": []
+		},
+		"lt": {
+			"recitals": ["kadangi:","PRIĖMĖ ŠĮ REGLAMENTĄ:"],
+			"articles": ["PRIĖMĖ ŠĮ REGLAMENTĄ:","^Priimta (Briuselyje|[^<]+) [0-9]{4} [0-9]+ [0-9]+$"],
+			"chapter": ["^([XVI]+) SKYRIUS", "^([XVI]+) SKYRIUS$", "^([XVI]+) SKYRIUS (.*)$"],
+			"section": ["^([0-9]+) SKIRSNIS", "^([0-9]+) SKIRSNIS$", "^([0-9]+) SKIRSNIS (.*)$"],
+			"article": ["^([0-9]+) straipsnis", "^([0-9]+) straipsnis$", "^([0-9]+) straipsnis (.*)$"],
+			"fixes": [
+				["^2 Direktyvos","2. Direktyvos"]
+			]
 		}
 	}
 }
