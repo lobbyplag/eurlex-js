@@ -13,7 +13,7 @@
 		"email": "sebastian@vollnhals.info",
 		"web": "http://vollnhals.info/"
 	}],
-	"homepage": "http://www.lobbyplag.eu/"
+	"homepage": "http://www.lobbyplag.eu/",
 	"bin": {
 		"eurlex": "./eurlex.js"
 	},
