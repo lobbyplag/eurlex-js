@@ -26,9 +26,14 @@ If you are curious what it looks like to get and convert something, try:
 
     eurlex -vu -l de,en,fr COM:2012:0011:FIN -o eurlex-test.json
 
+## profile.jsom
+
+This file will be explained if the format is somewhat stable.
+
 ## Limitations & Known issues
 
-* In Magyar, paragraphs and points partly use the same literal enclosures, which leads to paragraphs will be interpreted as headless points. You should be safe using `--unify` with another language as first parameter.
+* In __Magyar__, paragraphs and points partly use the same literal enclosures, which leads to paragraphs will be interpreted as headless points. You should be safe using `--unify` with another language as first parameter.
+* The translations for __Malti__ are pretty crappy and have redundant fragments. You have to hardly rely on the fixes in your profile.json
 
 ## License
 
