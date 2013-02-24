@@ -23,6 +23,10 @@
 		"url": "https://github.com/yetzt/eurlex-js.git"
 	},
 	"keywords": ["cli","eurlex","scraper"],
+	"bugs": {
+		"url": "http://github.com/yetzt/eurlex-js/issues",
+		"email": "eurlex-js@lobbyplag.eu"
+	}
 	"dependencies": {
 		"colors": ">= 0.6",
 		"optimist": ">= 0.3",
