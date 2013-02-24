@@ -335,11 +335,11 @@ var _parse = function(_data, callback) {
 		}
 		
 		/* match for article */
-		if (item.match(new RegExp(_delim.article))) {
+		if ((typeof _delim.article !== 'object') ? item.match(new RegExp(_delim.article,'i')) : item.match(new RegExp(_delim.article[0],'i'))) {
 			/* check if the article is broken */
-			if (item.match(new RegExp(_delim.article+'([0-9]+)$'))) item = [item, _data.articles.shift()].join(' ');
+			if ((typeof _delim.article !== 'object') ? item.match(new RegExp(_delim.article+'([0-9]+)$')) : item.match(new RegExp(_delim.article[1],'i'))) item = [item, _data.articles.shift()].join(' ');
 			/* get text */
-			_item = item.match(new RegExp(_delim.article+'([0-9]+)(\.[º°])? (.*)$'));
+			_item = (typeof _delim.article !== 'object') ? item.match(new RegExp(_delim.article+'([0-9]+)(\.[º°])? (.*)$')) : item.match(new RegExp(_delim.article[2],'i'));
 			if (!_item) throw new Error('Parser stopped on Article: '+item);
 			/* reset counters */
 			article_number++;
