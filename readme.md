@@ -26,9 +26,52 @@ If you are curious what it looks like to get and convert something, try:
 
     eurlex -vu -l de,en,fr COM:2012:0011:FIN -o eurlex-test.json
 
-## profile.jsom
+## profile.json
 
-This file will be explained if the format is somewhat stable.
+Here is a stripped and commented version of `profile.json`:
+
+````javascript
+{
+	"lang": ["en","de","..."],           // array of avalable languages
+	"expressions": {                     // regular expressions
+		"lang": "...",                   // to match the language of the document 
+		"title": "..."                   // to match the title of the document
+	},
+	"delimiters": {                      // delimiters (they are all regex)
+		"en": {                          // for this language 
+			"recitals": ["...","..."],   // start and end of recitals
+			"articles": ["...","..."],   // start and end of articles
+			"chapter": "^CHAPTER ",      // string to match a chapter
+			"section": "^SECTION ",      // string to match a section
+			"article": "^Article ",      // string to match an article
+			"fixes": [                   // before a line is parsed
+				["...","..."],           // .replace(/first/, "second")
+				["...","..."]            // as many as you need
+			]
+		},
+		"lv": {
+			"recitals": ["...","..."],
+			"articles": ["...","..."],
+			"chapter": [                 // if this is an array
+				"^([XVI]+) NODAĻA",      // if matches: chapter
+				"^([XVI]+) NODAĻA$",     // if matches: text missing
+				"^([XVI]+) NODAĻA (.*)$" // $1 is the literal, $2 is the text
+			],
+			"section": [                 // same here...
+				"^([0-9]+)\\. IEDAĻA", 
+				"^([0-9]+)\\. IEDAĻA$", 
+				"^([0-9]+)\\. IEDAĻA (.*)$"
+			],
+			"article": [                 // note! for article[3] 
+				"^([0-9]+)\\. pants",    // $1 is the literal, __$3__ is the text
+				"^([0-9]+)\\. pants$", 
+				"^([0-9]+)(\\.) pants (.*)$"
+			],
+			"fixes": []                  // fixes indeed can be empty
+		}
+	}
+}
+````
 
 ## Limitations & Known issues
 
