@@ -125,7 +125,7 @@
 			"articles": ["IR PIEŅĒMUŠI ŠO REGULU.","^(Briselē|[^<]+), [0-9]+\\.[0-9]+\\.[0-9]{4}$"],
 			"chapter": ["^([XVI]+) NODAĻA", "^([XVI]+) NODAĻA$", "^([XVI]+) NODAĻA (.*)$"],
 			"section": ["^([0-9]+)\\. IEDAĻA", "^([0-9]+)\\. IEDAĻA$", "^([0-9]+)\\. IEDAĻA (.*)$"],
-			"article": ["^([0-9]+)\\. pants", "^([0-9]+)\\. pants$", "^([0-9]+)\\. pants (.*)$"],
+			"article": ["^([0-9]+)\\. pants", "^([0-9]+)\\. pants$", "^([0-9]+)(\\.) pants (.*)$"],
 			"fixes": []
 		},
 		"lt": {
@@ -133,7 +133,7 @@
 			"articles": ["PRIĖMĖ ŠĮ REGLAMENTĄ:","^Priimta (Briuselyje|[^<]+) [0-9]{4} [0-9]+ [0-9]+$"],
 			"chapter": ["^([XVI]+) SKYRIUS", "^([XVI]+) SKYRIUS$", "^([XVI]+) SKYRIUS (.*)$"],
 			"section": ["^([0-9]+) SKIRSNIS", "^([0-9]+) SKIRSNIS$", "^([0-9]+) SKIRSNIS (.*)$"],
-			"article": ["^([0-9]+) straipsnis", "^([0-9]+) straipsnis$", "^([0-9]+) straipsnis (.*)$"],
+			"article": ["^([0-9]+) straipsnis", "^([0-9]+) straipsnis$", "^([0-9]+)() straipsnis (.*)$"],
 			"fixes": [
 				["^2 Direktyvos","2. Direktyvos"]
 			]
