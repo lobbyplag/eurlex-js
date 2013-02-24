@@ -489,11 +489,12 @@ var _save = function(data) {
 	
 	var data_json = (argv.r) ? JSON.stringify(data,null,'\t') : JSON.stringify(data,null,null);
 	
-	if (!argv.o || argv.o === '-') {
+	if (argv.o === true) {
 		process.stdout.write(data_json+'\n');
 		if (!argv.q) console.error('<3'.pad().magenta.inverse.bold, 'made with datalove'.magenta.bold)
 	} else {
-		var file = path.resolve(argv.o);
+		var filename = argv.o || ['eurlex-',_uri.replace(/[^a-z0-9\-\:]/i,'').toLowerCase(), '.json'].join('');
+		var file = path.resolve(filename);
 		fs.exists(path.dirname(file), function(exists){
 			if (!exists) throw new Error("Could not save output to: "+file);
 			fs.writeFileSync(file, data_json);
