@@ -14,6 +14,7 @@
 		"web": "http://vollnhals.info/"
 	}],
 	"homepage": "http://www.lobbyplag.eu/",
+	"preferGlobal": true,
 	"bin": {
 		"eurlex": "./eurlex.js"
 	},
