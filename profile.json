@@ -1,5 +1,5 @@
 {
-	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv","lt","hu"],
+	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv","lt","hu","mt","nl"],
 	"expressions": {
 		"lang": "<meta name=\"DC.language\" content=\"([^\"]+)\">",
 		"title": "<meta name=\"DC.description\" content=\"([^\"]+) \\/\\* [^\\*]+ \\*\\/\">"
@@ -148,6 +148,35 @@
 				["^2 ","2. "],
 				["c\\) a feldolgozási műveletek törvényességi felülvizsgálatának biztosítása ","c) a feldolgozási műveletek törvényességi felülvizsgálatának biztosítása tekintetében."],
 				["tekintetében\\.",""]
+			]
+		},
+		"mt": {
+			"recitals": ["Billi:","ADOTTAW DAN IR-REGOLAMENT:"],
+			"articles": ["ADOTTAW DAN IR-REGOLAMENT:","^Magħmula fi (Brussel|[^<]+), .*"],
+			"chapter": "^KAPITOLU ",
+			"section": "^TAQSIMA ",
+			"article": "^Artikolu ",
+			"fixes": [
+				["^2 ","2. "],
+				["l-għanijiet li għandhom jiġu segwiti mill-ipproċessar;", ""],
+				["u d-determinazzjoni tal-kontrollur; ", ""],
+				["2. B’mod partikolari, kull miżura leġiżlattiva msemmija fil-paragrafu 1 għandu jkun fiha dispożizzjonijiet speċifiċi tal-inqas dwar:", "2. B’mod partikolari, kull miżura leġiżlattiva msemmija fil-paragrafu 1 għandu jkun fiha dispożizzjonijiet speċifiċi tal-inqas dwar: l-għanijiet li għandhom jiġu segwiti mill-ipproċessar; u d-determinazzjoni tal-kontrollur;"],
+				["1. Il-kontrollur jew il-proċessur, skont kif ikun il-każ, għandu jikseb awtorizzazzjoni mill-awtorità ta’ superviżjoni qabel l-ipproċessar ta’ dejta personali, sabiex jassigura l-konformità tal-ipproċessar maħsub ma’ dan ir-Regolament u b’mod partikolari sabiex inaqqas ir-riskji involuti għas-suġġetti tad-dejta meta:","1. Il-kontrollur jew il-proċessur, skont kif ikun il-każ, għandu jikseb awtorizzazzjoni mill-awtorità ta’ superviżjoni qabel l-ipproċessar ta’ dejta personali, sabiex jassigura l-konformità tal-ipproċessar maħsub ma’ dan ir-Regolament u b’mod partikolari sabiex inaqqas ir-riskji involuti għas-suġġetti tad-dejta meta: kontrollur jew proċessur jadotta klawżoli kuntrattwali kif ipprovdut fil-punt (d) tal-Artikolu 42(2) jew ma jipprovdix għas-salvagwardji xierqa fi strument legalment vinkolanti kif imsemmi fl-Artikolu 42(5) għat-trasferiment ta’ dejta personali lejn pajjiż terz jew organizzazzjoni internazzjonali;"],
+				["kontrollur jew proċessur jadotta klawżoli kuntrattwali kif ipprovdut fil-punt \\(d\\) tal-Artikolu 42\\(2\\) jew ma jipprovdix għas-salvagwardji xierqa fi strument legalment vinkolanti kif imsemmi fl-Artikolu 42\\(5\\) għat-trasferiment ta’ dejta personali lejn pajjiż terz jew organizzazzjoni internazzjonali;",""],
+				["^\\.$", ""],
+				["Kull trasferiment ta’ dejta personali li tkun qiegħda tiġi pproċessata jew hija maħsuba li tkun ipproċessata wara t-trasferiment lil pajjiż terz jew lil organizzazzjoni internazzjonali jista’ jseħħ biss jekk, soġġett għal:","Kull trasferiment ta’ dejta personali li tkun qiegħda tiġi pproċessata jew hija maħsuba li tkun ipproċessata wara t-trasferiment lil pajjiż terz jew lil organizzazzjoni internazzjonali jista’ jseħħ biss jekk, soġġett għal: (a) id-dispożizzjonijet l-oħra ta’ dan ir-Regolament, il-kundizzjonijiet stabbiliti f’dan il-Kapitolu jkunu mħarsa mill-kontrollur u mill-proċessur, inkluż għal trasferimenti ulterjuri ta’ dejta personali mill-pajjiż terz jew minn organizzazzjoni internazzjonali lil pajjiż terz ieħor jew lil xi organizzazzjoni internazzjonali oħra."],
+				["\\(a\\) id-dispożizzjonijet l-oħra ta’ dan ir-Regolament, il-kundizzjonijiet stabbiliti f’dan il-Kapitolu jkunu mħarsa mill-kontrollur u mill-proċessur, inkluż għal trasferimenti ulterjuri ta’ dejta personali mill-pajjiż terz jew minn organizzazzjoni internazzjonali lil pajjiż terz ieħor jew lil xi organizzazzjoni internazzjonali oħra\\.",""],
+				["^\\(a\\) 1\\. Il-Bord", "1. Il-Bord"]
+			]
+		},
+		"nl": {
+			"recitals": ["Overwegende hetgeen volgt:","HEBBEN DE VOLGENDE VERORDENING VASTGESTELD:"],
+			"articles": ["HEBBEN DE VOLGENDE VERORDENING VASTGESTELD:","^Gedaan te (Brussel|[^<]+), op .*"],
+			"chapter": "^HOOFDSTUK ",
+			"section": "^AFDELING ",
+			"article": "^Artikel ",
+			"fixes": [
+				["^2 ","2. "]
 			]
 		}
 	}
