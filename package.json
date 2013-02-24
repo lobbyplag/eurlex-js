@@ -23,7 +23,7 @@
 	},
 	"keywords": ["cli","eurlex","scraper"],
 	"dependencies": {
-		"colors": ">= 0.6.",
+		"colors": ">= 0.6",
 		"optimist": ">= 0.3",
 		"request": ">= 2.14",
 		"vargs": ">= 0.1"
