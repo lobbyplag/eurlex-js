@@ -1,5 +1,5 @@
 {
-	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el"],
+	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv"],
 	"expressions": {
 		"lang": "<meta name=\"DC.language\" content=\"([^\"]+)\">",
 		"title": "<meta name=\"DC.description\" content=\"([^\"]+) \\/\\* [^\\*]+ \\*\\/\">"
@@ -118,6 +118,14 @@
 			"chapter": "^ΚΕΦΑΛΑΙΟ ",
 			"section": "^ΤΜΗΜΑ ",
 			"article": "^Άρθρο ",
+			"fixes": []
+		},
+		"lv": {
+			"recitals": ["tā kā:","IR PIEŅĒMUŠI ŠO REGULU."],
+			"articles": ["IR PIEŅĒMUŠI ŠO REGULU.","^(Briselē|[^<]+), [0-9]+\\.[0-9]+\\.[0-9]{4}$"],
+			"chapter": ["^([XVI]+) NODAĻA", "^([XVI]+) NODAĻA$", "^([XVI]+) NODAĻA (.*)$"],
+			"section": ["^([0-9]+)\\. IEDAĻA", "^([0-9]+)\\. IEDAĻA$", "^([0-9]+)\\. IEDAĻA (.*)$"],
+			"article": ["^([0-9]+)\\. pants", "^([0-9]+)\\. pants$", "^([0-9]+)\\. pants (.*)$"],
 			"fixes": []
 		}
 	}
