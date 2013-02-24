@@ -61,6 +61,13 @@ String.prototype.sha1 = function() {
 	return crypto.createHash('sha1').update(this.toString()).digest("hex");
 }
 
+String.prototype.enty = function() {
+	/* decode html entities. since the eu finds them suitable for cyrillic instead of utf-8 */
+	return this.toString().replace(/&#[0-9]{1,5};/g, function($0){
+		return String.fromCharCode(parseInt($0.replace(/^&#([0-9]{1,5});$/,'$1'),10));
+	});
+}
+
 /* help and check parameter count, since .demand() is not nice */
 if (argv.h || argv._.length !== 1) {
 	if (!argv.q) console.error('');
@@ -198,7 +205,7 @@ var _prepare = function(_data, callback) {
 
 	/* walk through paragraphs, remove tags and normalize whitespace */
 	var paragraphs = [];
-	for (var i = 0; i < _paragraphs.length; i++) paragraphs.push(_paragraphs[i].replace(/<p>([\S\s]*?)<\/p>/g, '$1').replace(/[\s]+/g, ' ').replace(/^\s+|\s+$/, ''));
+	for (var i = 0; i < _paragraphs.length; i++) paragraphs.push(_paragraphs[i].replace(/<p>([\S\s]*?)<\/p>/g, '$1').enty().replace(/[\s]+/g, ' ').replace(/^\s+|\s+$/, ''));
 
 	/* determine recitals and articles by delimiters */
 	_doc.recitals = [];
