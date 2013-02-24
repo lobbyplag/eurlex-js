@@ -275,13 +275,13 @@ var _parse = function(_data, callback) {
 		
 		item = _data.articles.shift();
 		
-		/* ignore empty items */
-		if (item === "") continue;
-		
 		/* apply fixes */
 		_delim.fixes.forEach(function(fix){
 			item = item.replace(new RegExp(fix[0]), fix[1]);
 		});
+		
+		/* ignore empty items */
+		if (item === "") continue;
 		
 		/* match for chapter */
 		if ((typeof _delim.chapter !== 'object') ? item.match(new RegExp(_delim.chapter)) : item.match(new RegExp(_delim.chapter[0]))) {
