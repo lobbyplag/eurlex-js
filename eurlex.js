@@ -15,7 +15,7 @@ var args = require("vargs").Constructor;
 var optimist = require("optimist");
 
 var argv = optimist
-	.boolean(['h','v','c','u','r','q'])
+	.boolean(['h','v','c','u','r','q','d'])
 	.alias('h','help')
 	.describe('h','show help')
 	.alias('v','verbose')
@@ -36,6 +36,8 @@ var argv = optimist
 	.describe('r','make json readable')
 	.alias('q','quiet')
 	.describe('q','no output whatsoever, except the data of course')
+	.alias('d','debug')
+	.describe('d','debugging output for mismatches in unifications')
 	.usage('$0'.magenta+' '+'[options]'.red+' '+'<EUR-Lex URI>'.green)
 	.argv;
 		
@@ -451,7 +453,7 @@ var _unify = function(data, callback) {
 
 		/* check for matching lengths */
 		for (var lang in data) {
-			if (_length !== null && _length !== data[lang].length) throw new Error('Language versions don\'t match in length: '+_length+' <> '+data[lang].length)
+			if (!argv.d && _length !== null && _length !== data[lang].length) throw new Error('Language versions don\'t match in length: '+_length+' <> '+data[lang].length)
 			_length = data[lang].length;
 			_default = lang;
 		}
@@ -466,6 +468,13 @@ var _unify = function(data, callback) {
 				"text": {}
 			}
 			for (var lang in data) {
+				if (argv.d && data[_default][i].id !== data[lang][i].id) {
+					console.log(data[_default][i].id.yellow)
+					console.log(data[lang][i].id.blue)
+					console.log(data[_default][i].text.yellow)
+					console.log(data[lang][i].text.blue)
+					process.exit(1);
+				}
 				_item.text[lang] = data[lang][i].text;
 			}
 			_unified.push(_item);
