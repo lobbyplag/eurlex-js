@@ -26,6 +26,10 @@ If you are curious what it looks like to get and convert something, try:
 
     eurlex -vu -l de,en,fr COM:2012:0011:FIN -o eurlex-test.json
 
+## Limitations & Known issues
+
+* In Magyar, paragraphs and points partly use the same literal enclosures, which leads to paragraphs will be interpreted as headless points. You should be safe using `--unify` with another language as first parameter.
+
 ## License
 
 eurlex.js is licensed under [EUPL](http://joinup.ec.europa.eu/software/page/eupl/licence-eupl)
