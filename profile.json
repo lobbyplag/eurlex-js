@@ -6,18 +6,19 @@
 	},
 	"delimiters": {
 		"en": {
-			"recitals": ["Whereas:","HAVE ADOPTED THIS REGULATION:"],
-			"articles": ["HAVE ADOPTED THIS REGULATION:","^Done at (Brussels|Strasbourg|Luxembourg|[^<]+),.*"],
+			"recitals": ["Whereas:","HAVE ADOPTED THIS REGULATION:|HAVE ADOPTED THIS DIRECTIVE:"],
+			"articles": ["HAVE ADOPTED THIS REGULATION:|HAVE ADOPTED THIS DIRECTIVE:","^Done at (Brussels|Strasbourg|Luxembourg|[^<]+),.*"],
 			"chapter": "^CHAPTER ",
 			"section": "^SECTION ",
 			"article": "^Article ",
 			"fixes": [
-				["^2 ","2. "]
+				["^2 ","2. "],
+				["^\\.$",""]
 			]
 		},
 		"de": {
-			"recitals": ["in Erwägung nachstehender Gründe:","HABEN FOLGENDE VERORDNUNG ERLASSEN:"],
-			"articles": ["HABEN FOLGENDE VERORDNUNG ERLASSEN:","^Geschehen zu (Brüssel|Bruessel|Brussel|Straßburg|Strasbourg|Strassburg|[^<]+) am.*"],
+			"recitals": ["in Erwägung nachstehender Gründe:","HABEN FOLGENDE VERORDNUNG ERLASSEN:|HABEN FOLGENDE RICHTLINIE ERLASSEN:"],
+			"articles": ["HABEN FOLGENDE VERORDNUNG ERLASSEN:|HABEN FOLGENDE RICHTLINIE ERLASSEN:","^Geschehen zu (Brüssel|Bruessel|Brussel|Straßburg|Strasbourg|Strassburg|[^<]+) am.*"],
 			"chapter": "^KAPITEL ",
 			"section": "^ABSCHNITT ",
 			"article": "^Artikel ",
