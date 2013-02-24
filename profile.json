@@ -1,5 +1,5 @@
 {
-	"lang": ["en","de","fr"],
+	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da"],
 	"expressions": {
 		"lang": "<meta name=\"DC.language\" content=\"([^\"]+)\">",
 		"title": "<meta name=\"DC.description\" content=\"([^\"]+) \\/\\* [^\\*]+ \\*\\/\">"
@@ -34,6 +34,72 @@
 			"fixes": [
 				["^2 ","2. "],
 				["^Article premier","Article 1"]
+			]
+		},
+		"es": {
+			"recitals": ["Considerando lo siguiente:","HAN ADOPTADO EL PRESENTE REGLAMENTO:"],
+			"articles": ["HAN ADOPTADO EL PRESENTE REGLAMENTO:","^Hecho en (Bruselas|Estrasburgo|Luxemburgo|[^<]+), el.*"],
+			"chapter": "^CAPÍTULO ",
+			"section": "^SECCIÓN ",
+			"article": "^Artículo ",
+			"fixes": [
+				["^2 ","2. "]
+			]
+		},
+		"it": {
+			"recitals": ["considerando quanto segue:","HANNO ADOTTATO IL PRESENTE REGOLAMENTO:"],
+			"articles": ["HANNO ADOTTATO IL PRESENTE REGOLAMENTO:","^Fatto a (Bruxelles|[^<]+), il.*"],
+			"chapter": "^CAPO ",
+			"section": "^SEZIONE ",
+			"article": "^Articolo ",
+			"fixes": [
+				["^2 ","2. "]
+			]
+		},
+		"pt": {
+			"recitals": ["Considerando o seguinte:","ADOTARAM O PRESENTE REGULAMENTO:"],
+			"articles": ["ADOTARAM O PRESENTE REGULAMENTO:","^Feito em (Bruxelas|[^<]+), em.*"],
+			"chapter": "^CAPÍTULO ",
+			"section": "^SECÇÃO ",
+			"article": "^Artigo ",
+			"fixes": []
+		},
+		"ga": {
+			"recitals": ["De bharr an méid seo a leanas:","TAR ÉIS AN RIALACHÁN SEO A GHLACADH:"],
+			"articles": ["TAR ÉIS AN RIALACHÁN SEO A GHLACADH:","^Arna dhéanamh sa (Bhruiséil|[^<]+), an.*"],
+			"chapter": "^CAIBIDIL ",
+			"section": "^ROINN ",
+			"article": "^Airteagal ",
+			"fixes": [
+				["^2 ","2. "]
+			]
+		},
+		"bg": {
+			"recitals": ["като имат предвид, че:","ПРИЕХА НАСТОЯЩИЯ РЕГЛАМЕНТ:"],
+			"articles": ["ПРИЕХА НАСТОЯЩИЯ РЕГЛАМЕНТ:","^Съставено в (Брюксел|[^<]+) на.*"],
+			"chapter": "^ГЛАВА ",
+			"section": "^РАЗДЕЛ ",
+			"article": "^Член ",
+			"fixes": [
+				["^2 ","2. "]
+			]
+		},
+		"cs": {
+			"recitals": ["vzhledem k těmto důvodům:","PŘIJALY TOTO NAŘÍZENÍ:"],
+			"articles": ["PŘIJALY TOTO NAŘÍZENÍ:","^V (Bruselu|[^<]+) dne .*"],
+			"chapter": "^KAPITOLA ",
+			"section": "^ODDÍL ",
+			"article": "^Článek ",
+			"fixes": []
+		},
+		"da": {
+			"recitals": ["ud fra følgende betragtninger:","VEDTAGET DENNE FORORDNING:"],
+			"articles": ["VEDTAGET DENNE FORORDNING:","^Udfærdiget i (Bruxelles|[^<]+), den.*"],
+			"chapter": "^KAPITEL ",
+			"section": "^AFDELING ",
+			"article": "^Artikel ",
+			"fixes": [
+				["^2 ","2. "]
 			]
 		}
 	}
