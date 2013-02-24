@@ -1,5 +1,5 @@
 {
-	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv","lt"],
+	"lang": ["en","de","fr","es","it","pt","ga","bg","cs","da","et","el","lv","lt","hu"],
 	"expressions": {
 		"lang": "<meta name=\"DC.language\" content=\"([^\"]+)\">",
 		"title": "<meta name=\"DC.description\" content=\"([^\"]+) \\/\\* [^\\*]+ \\*\\/\">"
@@ -136,6 +136,18 @@
 			"article": ["^([0-9]+) straipsnis", "^([0-9]+) straipsnis$", "^([0-9]+) straipsnis (.*)$"],
 			"fixes": [
 				["^2 Direktyvos","2. Direktyvos"]
+			]
+		},
+		"hu": {
+			"recitals": ["mivel:","ELFOGADTA EZT A RENDELETET:"],
+			"articles": ["ELFOGADTA EZT A RENDELETET:","^Kelt (Brüsszelben|[^<]+), [0-9]{4}\\.[0-9]+\\.[0-9]+\\.-én\\.$"],
+			"chapter": ["^([XVI]+)\\. FEJEZET", "^([XVI]+)\\. FEJEZET$", "^([XVI]+)\\. FEJEZET (.*)$"],
+			"section": ["^([0-9]+)\\. SZAKASZ", "^([0-9]+)\\. SZAKASZ$", "^([0-9]+)\\. SZAKASZ (.*)$"],
+			"article": ["^([0-9]+)\\. cikk", "^([0-9]+)\\. cikk$", "^([0-9]+)(\\.) cikk (.*)$"],
+			"fixes": [
+				["^2 ","2. "],
+				["c\\) a feldolgozási műveletek törvényességi felülvizsgálatának biztosítása ","c) a feldolgozási műveletek törvényességi felülvizsgálatának biztosítása tekintetében."],
+				["tekintetében\\.",""]
 			]
 		}
 	}
