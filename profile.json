@@ -1,0 +1,40 @@
+{
+	"lang": ["en","de","fr"],
+	"expressions": {
+		"lang": "<meta name=\"DC.language\" content=\"([^\"]+)\">",
+		"title": "<meta name=\"DC.description\" content=\"([^\"]+) \\/\\* [^\\*]+ \\*\\/\">"
+	},
+	"delimiters": {
+		"en": {
+			"recitals": ["Whereas:","HAVE ADOPTED THIS REGULATION:"],
+			"articles": ["HAVE ADOPTED THIS REGULATION:","^Done at (Brussels|Strasbourg|Luxembourg|[^<]+),.*"],
+			"chapter": "^CHAPTER ",
+			"section": "^SECTION ",
+			"article": "^Article ",
+			"fixes": [
+				["^2 ","2. "]
+			]
+		},
+		"de": {
+			"recitals": ["in Erwägung nachstehender Gründe:","HABEN FOLGENDE VERORDNUNG ERLASSEN:"],
+			"articles": ["HABEN FOLGENDE VERORDNUNG ERLASSEN:","^Geschehen zu (Brüssel|Bruessel|Brussel|Straßburg|Strasbourg|Strassburg|[^<]+) am.*"],
+			"chapter": "^KAPITEL ",
+			"section": "^ABSCHNITT ",
+			"article": "^Artikel ",
+			"fixes": [
+				["^2 ","2. "]
+			]
+		},
+		"fr": {
+			"recitals": ["considérant ce qui suit:","ONT ADOPTÉ LE PRÉSENT RÈGLEMENT:"],
+			"articles": ["ONT ADOPTÉ LE PRÉSENT RÈGLEMENT:","^Fait à (Bruxelles|Strasbourg|Luxembourg|[^<]+), le.*"],
+			"chapter": "^CHAPITRE ",
+			"section": "^SECTION ",
+			"article": "^Article ",
+			"fixes": [
+				["^2 ","2. "],
+				["^Article premier","Article 1"]
+			]
+		}
+	}
+}
