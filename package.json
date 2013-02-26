@@ -1,6 +1,6 @@
 {
 	"name": "eurlex",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "Retrieve documents from EUR-Lex and convert them to usable data",
 	"licenses": [{
 		"name": "EUPL",
