@@ -240,12 +240,13 @@ var _parse = function(_data, callback) {
 		"id": "h1",
 		"type": "title",
 		"literal": null,
+		"parent": "_",
 		"text": _data.title
 	});
 	if (argv.v && !argv.q) console.error(('H').pad().grey.inverse.bold, _data.title);
 	
 	var recital_number = 0;
-	
+		
 	/* recitals */
 	_data.recitals.forEach(function(recital){
 		var _recital = recital.match(/^\(([0-9]+)\) (.*)$/);
@@ -255,6 +256,7 @@ var _parse = function(_data, callback) {
 			"id": "r"+recital_number.toString(),
 			"type": "recital",
 			"literal": _recital[1],
+			"parent": "_",
 			"text": _recital[2]
 		});
 		if (argv.v && !argv.q) console.error(('R'+recital_number).pad().inverse.bold.yellow, _recital[2]);
@@ -269,7 +271,7 @@ var _parse = function(_data, callback) {
 	var point_number = 0;
 	var article_text_number = 0;
 	var paragraph_text_number = 0;
-
+	
 	var item = null;
 	var _item = null;
 
@@ -303,6 +305,7 @@ var _parse = function(_data, callback) {
 			_struct.push({
 				"id": "c"+chapter_number.toString(),
 				"type": "chapter",
+				"parent": "_",
 				"literal": _item[1],
 				"text": _item[2]
 			});
@@ -329,6 +332,7 @@ var _parse = function(_data, callback) {
 				"id": "c"+chapter_number.toString()+"s"+section_number.toString(),
 				"type": "section",
 				"literal": _item[1],
+				"parent": "c"+chapter_number.toString(),
 				"text": _item[2]
 			});
 			if (argv.v && !argv.q) console.error(('S'+section_number).pad().inverse.bold.magenta, _item[2]);
@@ -354,6 +358,7 @@ var _parse = function(_data, callback) {
 				"id": "a"+article_number.toString(),
 				"type": "article",
 				"literal": _item[1],
+				"parent": ((section_number === 0) ? "c"+chapter_number.toString() : "c"+chapter_number.toString()+"s"+section_number.toString()),
 				"text": _item[3]
 			});
 			if (argv.v && !argv.q) console.error(('A'+article_number).pad().inverse.bold.blue, _item[3]);
@@ -375,6 +380,7 @@ var _parse = function(_data, callback) {
 				"id": "a"+article_number.toString()+"p"+paragraph_number.toString(),
 				"type": "paragraph",
 				"literal": _item[1],
+				"parent": "a"+article_number.toString(),
 				"text": _item[3]
 			});
 			if (argv.v && !argv.q) console.error(('P'+paragraph_number).pad().inverse.bold.cyan, _item[3]);
@@ -391,6 +397,7 @@ var _parse = function(_data, callback) {
 				"id": (paragraph_number > 0) ? "a"+article_number.toString()+"p"+paragraph_number.toString()+"i"+point_number.toString() : "a"+article_number.toString()+"i"+point_number.toString(),
 				"type": "point",
 				"literal": _item[1],
+				"parent": "a"+article_number.toString()+((paragraph_number > 0) ? "p"+paragraph_number.toString() : ""),
 				"text": _item[2]
 			});
 			if (argv.v && !argv.q) console.error(('I'+point_number).pad().inverse.bold.green, _item[2]);
@@ -409,6 +416,7 @@ var _parse = function(_data, callback) {
 				"id": "a"+article_number.toString()+"t"+article_text_number.toString(),
 				"type": "introduction",
 				"literal": null,
+				"parent": "a"+article_number.toString(),
 				"text": item
 			});
 			
@@ -425,6 +433,7 @@ var _parse = function(_data, callback) {
 				"id": "a"+article_number.toString()+"p"+paragraph_number.toString()+"t"+paragraph_text_number.toString(),
 				"type": "subparagraph",
 				"literal": null,
+				"parent": "a"+article_number.toString()+"p"+paragraph_number.toString(),
 				"text": item
 			});
 
@@ -465,6 +474,7 @@ var _unify = function(data, callback) {
 				"id": data[_default][i].id,
 				"type": data[_default][i].type,
 				"literal": data[_default][i].literal,
+				"parent": data[_default][i].parent,
 				"text": {}
 			}
 			for (var lang in data) {
@@ -479,10 +489,31 @@ var _unify = function(data, callback) {
 			}
 			_unified.push(_item);
 		}
-
-		callback(_unified);
+		
+		_tree(_unified, function(data){
+			callback(data);
+		});
 
 	}
+}
+
+var _tree = function(data, callback) {
+	var tree = {};
+	var rel = {};
+	data.forEach(function(item,idx){
+		if (typeof tree[item.parent] !== "object") tree[item.parent] = [];
+		tree[item.parent].push(item.id);
+		rel[item.id] = idx;
+		data[idx].children = [];
+	});
+	for (id in tree) {
+		if (id in rel) {
+			tree[id].forEach(function(child){
+				data[rel[id]].children.push(child);
+			});
+		}
+	}
+	callback(data);
 }
 
 var _save = function(data) {
