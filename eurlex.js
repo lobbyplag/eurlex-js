@@ -497,7 +497,7 @@ var _save = function(data) {
 		var file = path.resolve(filename);
 		fs.exists(path.dirname(file), function(exists){
 			if (!exists) throw new Error("Could not save output to: "+file);
-			fs.writeFileSync(file, data_json);
+			fs.writeFileSync(file, data_json, 'utf8');
 			if (!argv.q) console.error('<3'.pad().magenta.inverse.bold, 'made with datalove'.magenta.bold)
 		});
 	}
