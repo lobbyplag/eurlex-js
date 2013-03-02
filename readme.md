@@ -1,6 +1,6 @@
 # eurlex.js
 
-eurlex.js is a command line utility to retrieve documents (specifically: regulation drafts) of several supported languages (`de`, `en` and `fr` for now) from the [EUR-Lex website](http://eur-lex.europa.eu/) and convert them into [JSON](http://json.org/). It is made with [node.js](http://nodejs.org/) and can be installed locally via [npm](https://npmjs.org/).
+eurlex.js is a command line utility to retrieve documents (specifically: regulation drafts) in all supported languages from the [EUR-Lex website](http://eur-lex.europa.eu/) and convert them into [JSON](http://json.org/). It is made with [node.js](http://nodejs.org/) and can be installed locally via [npm](https://npmjs.org/).
 
 ## Install
 
@@ -24,11 +24,11 @@ You get a brief description of all the options with
 
 If you are curious what it looks like to get and convert something, try:
 
-    eurlex -vu -l de,en,fr COM:2012:0011:FIN -o eurlex-test.json
+    eurlex -vu -l de,en,fr COM:2012:0011:FIN -o eurlex-com-2012-0011-fin.json
 
 ## profile.json
 
-Here is a stripped and commented version of `profile.json`:
+Since the HTML otuput of Eurlex is pretty far from being machine readable, eurlex.js applies a lot of magic to read it anyway. The magic can be fine tuned with setting in a file called `profile.json`. Here is a stripped and commented version of `profile.json`:
 
 ````javascript
 {
