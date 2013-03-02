@@ -76,7 +76,7 @@ Since the HTML otuput of Eurlex is pretty far from being machine readable, eurle
 ## Limitations & Known issues
 
 * In __Magyar__, paragraphs and points partly use the same literal enclosures, which leads to paragraphs will be interpreted as headless points. You should be safe using `--unify` with another language as first parameter.
-* The translations for __Malti__ are pretty crappy and have redundant fragments. You have to hardly rely on the fixes in your profile.json
+* The translations for __Malti__ are formatted pretty crappy and have redundant fragments. You have to hardly rely on the fixes in your profile.json
 
 ## License
 
