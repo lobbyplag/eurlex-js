@@ -82,6 +82,9 @@ var _profile = false;
 try {
 	(function(){
 		var _check = function(p) {
+            if (arguments[0] === undefined || arguments[1] === undefined){
+                return false;
+            }
 			var _file = path.resolve.apply(this, new args(arguments).array);
 			return (fs.existsSync(_file) && fs.statSync(_file).isFile()) ? _file : false;
 		}
